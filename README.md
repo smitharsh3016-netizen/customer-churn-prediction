@@ -14,7 +14,7 @@ An end-to-end machine-learning project that estimates whether a telecom customer
 
 ## Dataset
 
-The included CSV contains 7,043 customer rows and 21 columns, including demographics, account tenure, services, billing information, and the `Churn` target. The customer identifier is excluded from model inputs.
+The IBM sample contains 7,043 customer rows and 21 columns, including demographics, account tenure, services, billing information, and the `Churn` target. The customer identifier is excluded from model inputs. The CSV is included in the working project folder. If it is missing after cloning the GitHub repository, `train.py` downloads it from the public IBM sample-data repository and saves it under `data/`.
 
 The data describes a **fictional** telecommunications company. It is an educational sample, not a real customer export. Source: [IBM Telco Customer Churn sample data](https://github.com/IBM/telco-customer-churn-on-icp4d/blob/master/data/Telco-Customer-Churn.csv). IBM's description is available in its [Telco customer churn sample overview](https://community.ibm.com/community/user/blogs/steven-macko/2019/07/11/telco-customer-churn-1113).
 
@@ -75,7 +75,13 @@ python -m pip install -r requirements.txt
 
 ### 4. Start the application
 
-The saved model is included, so you can launch the app directly:
+Train once to download the data if needed, evaluate the model, and save `customer_churn_model.pkl`:
+
+```powershell
+python train.py
+```
+
+Then launch the app:
 
 ```powershell
 python -m streamlit run app.py
@@ -89,7 +95,7 @@ Open the local URL printed in the terminal (usually `http://localhost:8501`). En
 python train.py
 ```
 
-This reads `data/customer_churn.csv`, prints evaluation metrics, and replaces `customer_churn_model.pkl`. Training plots are displayed after evaluation.
+This reads `data/customer_churn.csv` (downloading it if it is not present), prints evaluation metrics, saves `customer_churn_model.pkl`, and displays the evaluation plots.
 
 ### Run the example prediction (optional)
 
