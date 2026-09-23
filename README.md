@@ -30,6 +30,7 @@ Results on the stratified 20% test split (1,409 customers), as recorded in [REPO
 | Churn precision | 50.4% |
 | Churn recall | 78.3% |
 | Churn F1-score | 61.4% |
+| ROC-AUC | 0.84 |
 
 Confusion matrix:
 
@@ -38,7 +39,7 @@ Confusion matrix:
 | Actual stay | 747 | 288 |
 | Actual churn | 81 | 293 |
 
-The training script also computes ROC-AUC and displays the ROC curve. Recall is relatively high: the model identifies many customers who churned, while also flagging some customers who stayed. This makes it a starting point for retention prioritization, not a final decision system. Predictions are estimates; results depend on this historical sample and may not generalize to another company or time period.
+The model's ROC-AUC is 0.84. Recall is relatively high: the model identifies many customers who churned, while also flagging some customers who stayed. This makes it a starting point for retention prioritization, not a final decision system. Predictions are estimates; results depend on this historical sample and may not generalize to another company or time period.
 
 ## Project files
 
